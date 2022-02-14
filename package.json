@@ -6,17 +6,21 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "json-server": "^0.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-router-dom": "6",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3010 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start:server": "json-server --watch server.json",
+    "dev": "concurrently \"yarn start\" \"yarn start:server\""
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
   }
 }

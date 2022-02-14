@@ -3,15 +3,28 @@ import React from "react";
 //custom style
 import { ComponentHero } from "./HeroStyle";
 
-//components
-import { Container } from "../../global/StyleGlobal";
+//images
+import HeroMobile from "../img/background-home-mobile.jpg";
+import HeroTable from "../img/background-home-tablet.jpg";
+import HeroDesktop from "../img/background-home-desktop.jpg";
 
 class Hero extends React.Component {
   render() {
     return (
       <ComponentHero className="hero">
-        <Container className="hero__container">
-          <div className="hero__contents">
+        <figure className="hero__contents">
+          <img
+            src={HeroDesktop}
+            alt="hero-desktop"
+            className="hero__img-desktop"
+          />
+          <img src={HeroTable} alt="hero-table" className="hero__img-table" />
+          <img
+            src={HeroMobile}
+            alt="hero-mobile"
+            className="hero__img-mobile"
+          />
+          <figcaption>
             <div>
               <hgroup>
                 <h2> So, you want to travel to</h2>
@@ -29,8 +42,8 @@ class Hero extends React.Component {
             <div className="hero__explore">
               <p> Explore</p>
             </div>
-          </div>
-        </Container>
+          </figcaption>
+        </figure>
       </ComponentHero>
     );
   }

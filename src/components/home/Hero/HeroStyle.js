@@ -1,34 +1,50 @@
 import styled from "styled-components";
 
-import HeroDesktop from "../img/background-home-desktop.jpg";
-import HeroTablet from "../img/background-home-tablet.jpg";
-import HeroMobile from "../img/background-home-mobile.jpg";
-
 export const ComponentHero = styled.section`
-  background: url(${HeroDesktop});
-  background-size: 100% 100% !important;
-  width: 100%;
-  height: 900px;
   position: absolute;
   inset: 0;
+  background: #0b0d17;
+  height: 900px;
+  width: 100%;
 
-  .hero__container {
+  .hero__contents {
     position: relative;
-    top: 40%;
 
-    .hero__contents {
+    h1,
+    h2,
+    p {
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      display: block;
+    }
+
+    .hero__img-table,
+    .hero__img-mobile {
+      display: none;
+    }
+
+    .hero__img-desktop {
+      height: 900px;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%, -70%);
       display: flex;
-
-      h1,
-      h2,
-      p {
-        font-style: normal;
-        font-weight: normal;
-        text-align: center;
-      }
+      width: 100%;
 
       hgroup {
         width: 40%;
+        position: relative;
+        left: 50px;
 
         h2 {
           font-family: Barlow;
@@ -38,7 +54,7 @@ export const ComponentHero = styled.section`
           letter-spacing: 4.725px;
           text-transform: uppercase;
           position: relative;
-          left: 50px;
+          left: 53px;
         }
 
         h1 {
@@ -48,7 +64,7 @@ export const ComponentHero = styled.section`
           color: var(--white);
           text-transform: uppercase;
           position: relative;
-          left: 70px;
+          left: 85px;
           top: 30px;
         }
       }
@@ -58,10 +74,10 @@ export const ComponentHero = styled.section`
         font-size: 22px;
         line-height: 35px;
         color: var(--light-gray);
-        width: 45%;
+        width: 40%;
         text-align: justify;
         position: relative;
-        left: 50px;
+        left: 130px;
         top: 50px;
       }
 
@@ -72,7 +88,7 @@ export const ComponentHero = styled.section`
         height: 220px;
         position: relative;
         top: 105px;
-        left: -100px;
+        left: -140px;
 
         p {
           font-family: Bellefair;
@@ -88,17 +104,32 @@ export const ComponentHero = styled.section`
 
   @media screen and (min-width: 769px) and (max-width: 1279px) {
     height: 100vh;
-    background: url(${HeroTablet});
 
-    .hero__container {
+    .hero__contents {
+      display: block;
       top: 300px;
 
-      .hero__contents {
+      .hero__img-table {
+        position: relative;
+        width: 100%;
         display: block;
+      }
+
+      .hero__img-mobile,
+      .hero__img-desktop {
+        display: none;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -10%);
+        flex-direction: column;
 
         hgroup {
           width: auto;
-
+          left: 0;
           h2 {
             font-size: 20px;
             letter-spacing: 3.375px;
@@ -116,7 +147,7 @@ export const ComponentHero = styled.section`
           font-size: 16px;
           line-height: 28px;
           margin: 32px auto;
-          width: 43%;
+          width: 80%;
           position: static;
           text-align: center;
         }
@@ -125,7 +156,7 @@ export const ComponentHero = styled.section`
           width: 242px;
           height: 242px;
           margin: 0 auto;
-          top: 100px;
+          top: 350px;
           left: 0;
 
           p {
@@ -139,19 +170,32 @@ export const ComponentHero = styled.section`
   }
 
   @media screen and (min-width: 481px) and (max-width: 768px) {
-    background: url(${HeroTablet});
     position: absolute;
     inset: 0;
     height: 1024px;
 
-    .hero__container {
-      top: 210px;
-
-      .hero__contents {
+    .hero__contents {
+      .hero__img-table {
+        position: relative;
+        width: 100%;
         display: block;
+      }
+
+      .hero__img-mobile,
+      .hero__img-desktop {
+        display: none;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: column;
 
         hgroup {
-          width: auto;
+          width: 100%;
+          left: 0;
 
           h2 {
             font-size: 20px;
@@ -170,7 +214,7 @@ export const ComponentHero = styled.section`
           font-size: 16px;
           line-height: 28px;
           margin: 32px auto;
-          width: 43%;
+          width: 80%;
           position: static;
           text-align: center;
         }
@@ -192,29 +236,48 @@ export const ComponentHero = styled.section`
     }
   }
 
+  @media screen and (min-width: 376px) and (max-width: 600px) {
+    height: 100vh !important;
+
+    img {
+      height: 100vh !important;
+    }
+  }
+
   @media screen and (max-width: 480px) {
-    background: url(${HeroMobile});
-    position: absolute;
-    inset: 0;
-    height: 667px;
+    height: 100vh;
 
-    .hero__container {
-      top: 130px;
+    .hero__contents {
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+      top: 0;
 
-      .hero__contents {
+      .hero__img-table,
+      .hero__img-desktop {
+        display: none;
+      }
+
+      .hero__img-mobile {
+        height: 100vh;
+        display: block;
+      }
+
+      figcaption {
         flex-direction: column;
-        width: 100%;
         position: absolute;
-        top: 10%;
         left: 50%;
+        top: 27%;
         transform: translateX(-50%);
 
         hgroup {
-          width: auto;
+          position: relative;
+          top: -50px;
+          left: 0;
+          width: 100%;
 
           h2 {
-            width: 70%;
-            margin: 0 auto;
+            width: 100%;
             font-size: 16px;
             line-height: 19px;
             letter-spacing: 2.7px;
@@ -222,7 +285,7 @@ export const ComponentHero = styled.section`
           }
 
           h1 {
-            width: 70%;
+            width: 100%;
             margin: 15px auto 20px auto;
             font-size: 80px;
             line-height: 100px;
@@ -231,11 +294,13 @@ export const ComponentHero = styled.section`
         }
 
         .hero__description {
-          width: 70%;
+          width: 80%;
           margin: 0 auto;
           font-size: 15px;
           line-height: 25px;
-          position: static;
+          position: relative;
+          top: -60px;
+          left: 0;
           text-align: center;
         }
 
@@ -243,13 +308,59 @@ export const ComponentHero = styled.section`
           width: 150px;
           height: 150px;
           margin: 0 auto;
-          top: 85px;
+          top: 15px;
           left: 0;
 
           p {
             font-size: 20px;
             line-height: 160px;
             letter-spacing: 1.25px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .hero__contents {
+      figcaption {
+        position: absolute;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%, -90%);
+        width: 100%;
+
+        hgroup {
+          left: 0;
+          width: 100%;
+
+          h2 {
+            font-size: 14px;
+            position: relative;
+            top: 40px;
+            left: 0;
+          }
+          h1 {
+            font-size: 60px;
+            position: relative;
+            top: 20px;
+            left: 0;
+          }
+        }
+
+        .hero__description {
+          width: 75%;
+          font-size: 14px;
+        }
+
+        .hero__explore {
+          width: 100px;
+          height: 100px;
+          top: -10px;
+
+          p {
+            font-size: 16px;
+            line-height: 100px;
           }
         }
       }

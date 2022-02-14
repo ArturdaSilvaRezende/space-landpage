@@ -2,12 +2,14 @@ import React from "react";
 
 //custom style
 import { ComponentHeader } from "./HeaderStyle";
-import { Container } from "../../global/StyleGlobal";
 
 //images
 import Logo from "../img/logo.svg";
 import ShowMenu from "../img/icon-hamburger.svg";
 import HideMenu from "../img/icon-close.svg";
+
+//react-router-dom
+import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   constructor(props) {
@@ -57,51 +59,65 @@ class Header extends React.Component {
   render() {
     return (
       <ComponentHeader className="header">
-        <Container className="header__container">
-          <a href="index.html" className="header__logo">
-            <img src={Logo} alt="space-tourism-logo" />
-          </a>
+        <NavLink
+          to="/"
+          exact="true"
+          className={({ isActive }) =>
+            isActive ? "header__logo" : "header__logo"
+          }
+        >
+          <img src={Logo} alt="space-tourism-logo" />
+        </NavLink>
 
+        <button
+          type="button"
+          className="Header__btn-show"
+          onClick={() => this.handleShowMenu()}
+        >
+          <img src={ShowMenu} alt="button-show-menu" />
+        </button>
+
+        <div className="header__line"></div>
+        <nav className="header__menu" ref={this.MenuControl}>
+          <ul>
+            <li>
+              <NavLink to="/" exact="true">
+                <span>00</span> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="Destination"
+                className={({ isActive }) => (isActive ? "active" : null)}
+              >
+                <span>01</span> Destination
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="Crew"
+                className={({ isActive }) => (isActive ? "active" : null)}
+              >
+                <span>03</span> Crew
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="Technology"
+                className={({ isActive }) => (isActive ? "active" : null)}
+              >
+                <span>04</span> Technology
+              </NavLink>
+            </li>
+          </ul>
           <button
             type="button"
-            className="Header__btn-show"
-            onClick={() => this.handleShowMenu()}
+            className="Header__btn-hide"
+            onClick={() => this.handleHideMenu()}
           >
-            <img src={ShowMenu} alt="button-show-menu" />
+            <img src={HideMenu} alt="button-hide-menu" />
           </button>
-
-          <nav className="header__menu" ref={this.MenuControl}>
-            <ul>
-              <li>
-                <a href=" #">
-                  <span>00</span> Home
-                </a>
-              </li>
-              <li>
-                <a href=" #">
-                  <span>01</span> Destination
-                </a>
-              </li>
-              <li>
-                <a href=" #">
-                  <span>03</span> Crew
-                </a>
-              </li>
-              <li>
-                <a href=" #">
-                  <span>04</span> Technology
-                </a>
-              </li>
-            </ul>
-            <button
-              type="button"
-              className="Header__btn-hide"
-              onClick={() => this.handleHideMenu()}
-            >
-              <img src={HideMenu} alt="button-hide-menu" />
-            </button>
-          </nav>
-        </Container>
+        </nav>
       </ComponentHeader>
     );
   }
