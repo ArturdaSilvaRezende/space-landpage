@@ -5,12 +5,13 @@
   outline: none;
 }
 
-body {
-  position: relative;
-}
 
 html, body {
   height: 100%;
+}
+
+body {
+  position: relative;
 }
 
 a {
