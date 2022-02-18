@@ -6,18 +6,31 @@ import { Container } from "../../global/StyleGlobal";
 //custom style
 import { ComponentDestination } from "./DestinationStyle";
 
-//services
-import { getDatas } from "../../../services/getDatas";
+//datas
+import DestinationData from "./DestinationData";
 
 const Destination = () => {
   const [filter, setFilter] = useState("Moon");
   const [category, setCategory] = useState([]);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    getDatas("destinations").then((result) => {
-      setCategory(result);
-    });
+    setCategory(DestinationData);
   }, []);
+
+  useEffect(() => {
+    setCategory([]);
+    const filtered = DestinationData.map((item) => ({
+      ...item,
+      filtered: item.name.includes(filter),
+    }));
+    setCategory(filtered);
+  }, [filter]);
+
+  const handleFunctions = (crew, index) => {
+    setFilter(crew);
+    setActive(index);
+  };
 
   return (
     <ComponentDestination className="destination">
@@ -28,37 +41,37 @@ const Destination = () => {
 
         {category.map(
           (item) =>
-            item.name === filter && (
+            item.filtered === true && (
               <div className="destination__contents" key={item.name}>
                 <img src={item.images} alt={item.name} />
 
                 <div className="destination__description">
                   <ul className="destination__menu">
                     <li
+                      className={active === 0 ? "activeDest" : ""}
                       active={`${filter === "Moon"}`}
-                      onClick={() => setFilter("Moon")}
-                      className="activeDest"
+                      onClick={() => handleFunctions("Moon", 0)}
                     >
                       Moon
                     </li>
                     <li
+                      className={active === 1 ? "activeDest" : ""}
                       active={`${filter === "Mars"}`}
-                      onClick={() => setFilter("Mars")}
-                      className="activeDest"
+                      onClick={() => handleFunctions("Mars", 1)}
                     >
                       Mars
                     </li>
                     <li
+                      className={active === 2 ? "activeDest" : ""}
                       active={`${filter === "Europa"}`}
-                      onClick={() => setFilter("Europa")}
-                      className="activeDest"
+                      onClick={() => handleFunctions("Europa", 2)}
                     >
                       Europa
                     </li>
                     <li
+                      className={active === 3 ? "activeDest" : ""}
                       active={`${filter === "Titan"}`}
-                      onClick={() => setFilter("Titan")}
-                      className="activeDest"
+                      onClick={() => handleFunctions("Titan", 3)}
                     >
                       Titan
                     </li>

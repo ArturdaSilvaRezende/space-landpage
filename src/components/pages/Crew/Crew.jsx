@@ -6,8 +6,8 @@ import { Container } from "../../global/StyleGlobal";
 //Custom style
 import { ComponentCrew } from "./CrewStyle";
 
-//services
-import { getDatas } from "../../../services/getDatas";
+//data
+import CrewData from "./CrewData";
 
 const Crew = (props) => {
   const [filter, setFilter] = useState("Douglas");
@@ -15,10 +15,17 @@ const Crew = (props) => {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
-    getDatas("crew").then((result) => {
-      setCategory(result);
-    });
+    setCategory(CrewData);
   }, []);
+
+  useEffect(() => {
+    setCategory([]);
+    const filtered = CrewData.map((item) => ({
+      ...item,
+      filtered: item.id.includes(filter),
+    }));
+    setCategory(filtered);
+  }, [filter]);
 
   const handleFunctions = (crew, index) => {
     setFilter(crew);
@@ -34,7 +41,7 @@ const Crew = (props) => {
 
         {category.map(
           (item) =>
-            item.id === filter && (
+            item.filtered === true && (
               <div className="crew__contents" key={item.name}>
                 <figure className="crew__employee">
                   <img src={item.images} alt={item.name} />

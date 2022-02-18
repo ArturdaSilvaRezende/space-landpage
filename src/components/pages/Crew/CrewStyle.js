@@ -73,6 +73,12 @@ export const ComponentCrew = styled.section`
             mix-blend-mode: normal;
             opacity: 0.17;
             cursor: pointer;
+
+            &:hover {
+              background-color: var(--white);
+              mix-blend-mode: normal;
+              opacity: 0.5;
+            }
           }
         }
 
