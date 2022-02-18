@@ -12,7 +12,6 @@
 .active {
     position: relative;
     display: block;
-    position: relative;
 }
 
 .active::before {

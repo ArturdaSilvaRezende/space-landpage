@@ -8,6 +8,9 @@ import HeroMobile from "../img/background-home-mobile.jpg";
 import HeroTable from "../img/background-home-tablet.jpg";
 import HeroDesktop from "../img/background-home-desktop.jpg";
 
+//react-router-dom
+import { NavLink } from "react-router-dom";
+
 class Hero extends React.Component {
   render() {
     return (
@@ -40,7 +43,9 @@ class Hero extends React.Component {
             </div>
 
             <div className="hero__explore">
-              <p> Explore</p>
+              <p>
+                <NavLink to="Destination">Explore</NavLink>
+              </p>
             </div>
           </figcaption>
         </figure>

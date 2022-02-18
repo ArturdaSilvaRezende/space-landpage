@@ -57,6 +57,7 @@ export const ComponentHeader = styled.header`
       padding: 0 20px;
 
       li {
+        position: relative;
         a {
           font-family: Barlow;
           font-style: normal;
@@ -67,6 +68,20 @@ export const ComponentHeader = styled.header`
           color: #ffffff;
           text-transform: uppercase;
 
+          &:hover {
+            &::before {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              top: 40.2px;
+              background-color: var(--white);
+              mix-blend-mode: normal;
+              opacity: 0.5;
+            }
+          }
           span {
             font-weight: bolder;
           }

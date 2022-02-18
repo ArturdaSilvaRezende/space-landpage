@@ -95,8 +95,11 @@ export const ComponentHero = styled.section`
           font-size: 27px;
           line-height: 220px;
           letter-spacing: 2px;
-          color: #0b0d17;
           text-transform: uppercase;
+
+          a {
+            color: #0b0d17;
+          }
         }
       }
     }
@@ -230,6 +233,10 @@ export const ComponentHero = styled.section`
             font-size: 32px;
             line-height: 245px;
             letter-spacing: 2px;
+
+            a {
+              background: var(--black) !important;
+            }
           }
         }
       }
