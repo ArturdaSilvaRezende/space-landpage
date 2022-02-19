@@ -169,7 +169,8 @@ export const ComponentHeader = styled.header`
       top: 0;
       width: 270px;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(1rem);
 
       z-index: 999;
       display: none;
