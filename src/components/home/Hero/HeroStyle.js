@@ -89,6 +89,28 @@ export const ComponentHero = styled.section`
         position: relative;
         top: 105px;
         left: -140px;
+        transition: ease-in 1s;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: -50px;
+          width: 300px;
+          height: 300px;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 50%;
+          z-index: -1;
+          opacity: 0;
+          transition: opacity 500ms linear, transform 750ms ease-in-out;
+        }
+
+        &:hover {
+          &::after {
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
 
         p {
           font-family: Bellefair;
@@ -162,6 +184,11 @@ export const ComponentHero = styled.section`
           top: 350px;
           left: 0;
 
+          &::after {
+            top: -30px;
+            left: -30px;
+          }
+
           p {
             font-size: 32px;
             line-height: 245px;
@@ -229,14 +256,15 @@ export const ComponentHero = styled.section`
           top: 100px;
           left: 0;
 
+          &::after {
+            top: -30px;
+            left: -30px;
+          }
+
           p {
             font-size: 32px;
             line-height: 245px;
             letter-spacing: 2px;
-
-            a {
-              background: var(--black) !important;
-            }
           }
         }
       }
@@ -318,6 +346,13 @@ export const ComponentHero = styled.section`
           top: 15px;
           left: 0;
 
+          &::after {
+            top: -10px;
+            left: -12px;
+            width: 170px;
+            height: 170px;
+          }
+
           p {
             font-size: 20px;
             line-height: 160px;
@@ -364,6 +399,13 @@ export const ComponentHero = styled.section`
           width: 100px;
           height: 100px;
           top: -10px;
+
+          &::after {
+            top: -5px;
+            left: -5px;
+            width: 110px;
+            height: 110px;
+          }
 
           p {
             font-size: 16px;
