@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.4c97d7d7.css",
-    "main.js": "/static/js/main.ddb1f589.js",
+    "main.js": "/static/js/main.375f6bdc.js",
     "static/media/image-victor-glover.png": "/static/media/image-victor-glover.8a9a5424588b73ec61c2.png",
     "static/media/image-anousheh-ansari.png": "/static/media/image-anousheh-ansari.2d647128496ddc638acd.png",
     "static/media/image-mark-shuttleworth.png": "/static/media/image-mark-shuttleworth.fc30f35b05fc0bc4ee47.png",
@@ -21,6 +21,7 @@
     "static/media/image-launch-vehicle-landscape.jpg": "/static/media/image-launch-vehicle-landscape.b6d3998cbd71c72bccfe.jpg",
     "static/media/background-crew-tablet.jpg": "/static/media/background-crew-tablet.16d51cf61e98ce45eb61.jpg",
     "static/media/image-space-capsule-portrait.jpg": "/static/media/image-space-capsule-portrait.dd0ac138afef98c1666a.jpg",
+    "static/media/image-space-capsule-landscape.jpg": "/static/media/image-space-capsule-landscape.d672da81d5ff3ada7301.jpg",
     "static/media/image-launch-vehicle-portrait.jpg": "/static/media/image-launch-vehicle-portrait.0c758955a178bdcc3230.jpg",
     "static/media/background-home-mobile.jpg": "/static/media/background-home-mobile.13f7adecbcb3c3f170d8.jpg",
     "static/media/background-technology-tablet.jpg": "/static/media/background-technology-tablet.48c38b028217ee0096c4.jpg",
@@ -30,10 +31,10 @@
     "static/media/icon-close.svg": "/static/media/icon-close.d47fda63cbd8b3fedbbc1b2a53f64470.svg",
     "static/media/icon-hamburger.svg": "/static/media/icon-hamburger.5273efa7c50e96ef3e51e7a2b54048ce.svg",
     "main.4c97d7d7.css.map": "/static/css/main.4c97d7d7.css.map",
-    "main.ddb1f589.js.map": "/static/js/main.ddb1f589.js.map"
+    "main.375f6bdc.js.map": "/static/js/main.375f6bdc.js.map"
   },
   "entrypoints": [
     "static/css/main.4c97d7d7.css",
-    "static/js/main.ddb1f589.js"
+    "static/js/main.375f6bdc.js"
   ]
 }

@@ -8,7 +8,7 @@ import ImageSpaceLandscape from "./img/image-spaceport-landscape.jpg";
 
 //Space Capsule
 import ImageSpaceCapsulePortrait from "./img/image-space-capsule-portrait.jpg";
-import ImageSpaceCapsuleLandscape from "./img/image-spaceport-landscape.jpg";
+import ImageSpaceCapsuleLandscape from "./img/image-space-capsule-landscape.jpg";
 
 const TechnologyData = [
   {

@@ -194,10 +194,20 @@ export const ComponentHeader = styled.header`
         flex-direction: column;
         padding: 0;
         left: 20px;
-        width: 140px;
+        width: 80%;
 
         li + li {
           margin-top: 35px;
+        }
+
+        li {
+          a {
+            &:hover {
+              &::before {
+                top: 30px;
+              }
+            }
+          }
         }
       }
     }

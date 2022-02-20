@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
+import HeroMobile from "../img/background-home-mobile.jpg";
+import HeroTablet from "../img/background-home-tablet.jpg";
+import HeroDesktop from "../img/background-home-desktop.jpg";
+
 export const ComponentHero = styled.section`
+  background: url(${HeroDesktop});
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   position: absolute;
   inset: 0;
-  background: #0b0d17;
   height: 900px;
   width: 100%;
 
   .hero__contents {
     position: relative;
+    top: 380px;
+    display: flex;
+    flex-basis: 100%;
 
     h1,
     h2,
@@ -18,29 +27,7 @@ export const ComponentHero = styled.section`
       text-align: center;
     }
 
-    img {
-      position: relative;
-      width: 100%;
-      display: block;
-    }
-
-    .hero__img-table,
-    .hero__img-mobile {
-      display: none;
-    }
-
-    .hero__img-desktop {
-      height: 900px;
-    }
-
-    figcaption {
-      position: absolute;
-      left: 50%;
-      top: 70%;
-      transform: translate(-50%, -70%);
-      display: flex;
-      width: 100%;
-
+    .hero__text {
       hgroup {
         width: 40%;
         position: relative;
@@ -80,78 +67,64 @@ export const ComponentHero = styled.section`
         left: 130px;
         top: 50px;
       }
+    }
 
-      .hero__explore {
-        background-color: var(--white);
+    .hero__explore {
+      background-color: var(--white);
+      border-radius: 50%;
+      width: 272px;
+      height: 220px;
+      position: relative;
+      top: 105px;
+      left: -140px;
+      transition: ease-in 1s;
+      z-index: 999;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: -50px;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.15);
         border-radius: 50%;
-        width: 272px;
-        height: 220px;
-        position: relative;
-        top: 105px;
-        left: -140px;
-        transition: ease-in 1s;
+        opacity: 0;
+        transition: opacity 500ms linear, transform 750ms ease-in-out;
+        z-index: -1;
+      }
 
+      &:hover {
         &::after {
-          content: "";
-          position: absolute;
-          top: -40px;
-          left: -50px;
-          width: 300px;
-          height: 300px;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 50%;
-          z-index: -1;
-          opacity: 0;
-          transition: opacity 500ms linear, transform 750ms ease-in-out;
+          opacity: 1;
+          transform: scale(1.2);
         }
+      }
 
-        &:hover {
-          &::after {
-            opacity: 1;
-            transform: scale(1.2);
-          }
-        }
+      p {
+        font-family: Bellefair;
+        font-size: 27px;
+        line-height: 220px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
 
-        p {
-          font-family: Bellefair;
-          font-size: 27px;
-          line-height: 220px;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-
-          a {
-            color: #0b0d17;
-          }
+        a {
+          color: #0b0d17;
         }
       }
     }
   }
 
-  @media screen and (min-width: 769px) and (max-width: 1279px) {
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    background: url(${HeroTablet});
+    background-size: 100% 100%;
     height: 100vh;
 
     .hero__contents {
-      display: block;
+      flex-direction: column;
       top: 300px;
 
-      .hero__img-table {
-        position: relative;
-        width: 100%;
-        display: block;
-      }
-
-      .hero__img-mobile,
-      .hero__img-desktop {
-        display: none;
-      }
-
-      figcaption {
-        position: absolute;
-        left: 50%;
-        top: 10%;
-        transform: translate(-50%, -10%);
-        flex-direction: column;
-
+      .hero__text {
         hgroup {
           width: auto;
           left: 0;
@@ -176,53 +149,39 @@ export const ComponentHero = styled.section`
           position: static;
           text-align: center;
         }
+      }
 
-        .hero__explore {
-          width: 242px;
-          height: 242px;
-          margin: 0 auto;
-          top: 350px;
-          left: 0;
+      .hero__explore {
+        width: 242px;
+        height: 242px;
+        margin: 0 auto;
 
-          &::after {
-            top: -30px;
-            left: -30px;
-          }
+        left: 0;
 
-          p {
-            font-size: 32px;
-            line-height: 245px;
-            letter-spacing: 2px;
-          }
+        &::after {
+          top: -30px;
+          left: -30px;
+        }
+
+        p {
+          font-size: 32px;
+          line-height: 245px;
+          letter-spacing: 2px;
         }
       }
     }
   }
 
   @media screen and (min-width: 481px) and (max-width: 768px) {
+    background: url(${HeroTablet});
     position: absolute;
     inset: 0;
     height: 1024px;
 
     .hero__contents {
-      .hero__img-table {
-        position: relative;
-        width: 100%;
-        display: block;
-      }
-
-      .hero__img-mobile,
-      .hero__img-desktop {
-        display: none;
-      }
-
-      figcaption {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        flex-direction: column;
-
+      flex-direction: column;
+      top: 250px;
+      .hero__text {
         hgroup {
           width: 100%;
           left: 0;
@@ -248,63 +207,45 @@ export const ComponentHero = styled.section`
           position: static;
           text-align: center;
         }
+      }
 
-        .hero__explore {
-          width: 242px;
-          height: 242px;
-          margin: 0 auto;
-          top: 100px;
-          left: 0;
+      .hero__explore {
+        width: 242px;
+        height: 242px;
+        margin: 0 auto;
+        top: 100px;
+        left: 0;
 
-          &::after {
-            top: -30px;
-            left: -30px;
-          }
+        &::after {
+          top: -30px;
+          left: -30px;
+        }
 
-          p {
-            font-size: 32px;
-            line-height: 245px;
-            letter-spacing: 2px;
-          }
+        p {
+          font-size: 32px;
+          line-height: 245px;
+          letter-spacing: 2px;
         }
       }
     }
   }
 
   @media screen and (min-width: 376px) and (max-width: 600px) {
-    height: 100vh !important;
-
-    img {
-      height: 100vh !important;
+    .hero__contents {
+      top: 240px !important;
     }
   }
 
   @media screen and (max-width: 480px) {
+    background: url(${HeroMobile});
+    background-size: 100% 100%;
     height: 100vh;
 
     .hero__contents {
       flex-direction: column;
-      width: 100%;
-      position: relative;
-      top: 0;
+      top: 170px;
 
-      .hero__img-table,
-      .hero__img-desktop {
-        display: none;
-      }
-
-      .hero__img-mobile {
-        height: 100vh;
-        display: block;
-      }
-
-      figcaption {
-        flex-direction: column;
-        position: absolute;
-        left: 50%;
-        top: 27%;
-        transform: translateX(-50%);
-
+      .hero__text {
         hgroup {
           position: relative;
           top: -50px;
@@ -338,40 +279,39 @@ export const ComponentHero = styled.section`
           left: 0;
           text-align: center;
         }
+      }
 
-        .hero__explore {
-          width: 150px;
-          height: 150px;
-          margin: 0 auto;
-          top: 15px;
-          left: 0;
+      .hero__explore {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+        top: 15px;
+        left: 0;
+        overflow: hidden;
 
-          &::after {
-            top: -10px;
-            left: -12px;
-            width: 170px;
-            height: 170px;
-          }
+        &::after {
+          top: -10px;
+          left: -12px;
+          width: 170px;
+          height: 170px;
+        }
 
-          p {
-            font-size: 20px;
-            line-height: 160px;
-            letter-spacing: 1.25px;
-          }
+        p {
+          font-size: 20px;
+          line-height: 160px;
+          letter-spacing: 1.25px;
         }
       }
     }
   }
 
   @media screen and (max-width: 320px) {
-    .hero__contents {
-      figcaption {
-        position: absolute;
-        left: 50%;
-        top: 90%;
-        transform: translate(-50%, -90%);
-        width: 100%;
+    background-size: contain;
 
+    .hero__contents {
+      top: 120px;
+
+      .hero__text {
         hgroup {
           left: 0;
           width: 100%;
@@ -391,26 +331,26 @@ export const ComponentHero = styled.section`
         }
 
         .hero__description {
-          width: 75%;
+          width: 78%;
           font-size: 14px;
         }
+      }
 
-        .hero__explore {
-          width: 100px;
-          height: 100px;
-          top: -10px;
+      .hero__explore {
+        width: 100px;
+        height: 100px;
+        top: -10px;
 
-          &::after {
-            top: -5px;
-            left: -5px;
-            width: 110px;
-            height: 110px;
-          }
+        &::after {
+          top: -5px;
+          left: -5px;
+          width: 110px;
+          height: 110px;
+        }
 
-          p {
-            font-size: 16px;
-            line-height: 100px;
-          }
+        p {
+          font-size: 16px;
+          line-height: 100px;
         }
       }
     }

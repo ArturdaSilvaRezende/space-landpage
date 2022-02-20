@@ -73,7 +73,7 @@ export const ComponentDestination = styled.section`
               height: 2px;
               bottom: 0;
               left: 0;
-              top: 30.2px;
+              top: 25.2px;
               background-color: var(--white);
             }
           }
@@ -98,7 +98,7 @@ export const ComponentDestination = styled.section`
                 height: 2px;
                 bottom: 0;
                 left: 0;
-                top: 30.2px;
+                top: 25.2px;
                 background-color: var(--white);
                 mix-blend-mode: normal;
                 opacity: 0.5;
@@ -117,7 +117,7 @@ export const ComponentDestination = styled.section`
             font-size: 83px;
             line-height: 115px;
             text-transform: uppercase;
-            margin: 20px 0 15px -10px;
+            margin: 40px 0 15px -10px;
           }
 
           p {
@@ -320,6 +320,7 @@ export const ComponentDestination = styled.section`
         left: 50%;
         transform: translateX(-50%);
         flex-direction: column;
+        width: 100%;
 
         img {
           width: 170px;
@@ -332,7 +333,7 @@ export const ComponentDestination = styled.section`
           height: auto;
 
           .destination__menu {
-            width: 237.5px;
+            width: 75%;
             margin: 0 auto;
 
             li {
@@ -344,6 +345,7 @@ export const ComponentDestination = styled.section`
 
           .description__about {
             margin: 20px auto 30px auto;
+            width: 100%;
 
             h2 {
               font-size: 56px;
@@ -368,6 +370,7 @@ export const ComponentDestination = styled.section`
 
           .destination__information {
             flex-direction: column;
+            width: 100%;
 
             span,
             p {
