@@ -302,7 +302,7 @@ export const ComponentDestination = styled.section`
   @media screen and (max-width: 480px) {
     background: url(${BgMobile});
     background-size: 100% 100%;
-    height: 850px;
+    height: 870px;
 
     .destination__container {
       position: relative;
@@ -317,8 +317,8 @@ export const ComponentDestination = styled.section`
       .destination__contents {
         position: absolute;
         top: 60px;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 40%;
+        transform: translateX(-40%);
         flex-direction: column;
         width: 100%;
 
@@ -334,7 +334,7 @@ export const ComponentDestination = styled.section`
 
           .destination__menu {
             width: 75%;
-            margin: 0 auto;
+            margin: 0 auto 0 30px;
 
             li {
               font-size: 14px;

@@ -232,7 +232,7 @@ export const ComponentHero = styled.section`
 
   @media screen and (min-width: 376px) and (max-width: 600px) {
     .hero__contents {
-      top: 240px !important;
+      top: 180px !important;
     }
   }
 
@@ -287,7 +287,6 @@ export const ComponentHero = styled.section`
         margin: 0 auto;
         top: 15px;
         left: 0;
-        overflow: hidden;
 
         &::after {
           top: -10px;
