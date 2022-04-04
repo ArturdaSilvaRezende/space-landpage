@@ -45,6 +45,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Personal site](https://artur-da-silva-rezende.netlify.app)
+- Website - [Personal site](https://artur-silva-rezende.netlify.app/)
 - Frontend Mentor - [@ArturdaSilvaRezende](https://www.frontendmentor.io/profile/ArturdaSilvaRezende)
 
